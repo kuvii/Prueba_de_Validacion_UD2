@@ -5,9 +5,9 @@ public class CalificationCreator extends Thread {
     private int startingIndex;
     private int maxCreateNum;
 
-    public CalificationCreator(String id, int starting_index, int maxCreateNum) {
+    public CalificationCreator(String id, int startingIndex, int maxCreateNum) {
         this.threadName = id;
-        this.startingIndex = starting_index;
+        this.startingIndex = startingIndex;
         this.maxCreateNum = maxCreateNum;
     }
 
@@ -25,7 +25,7 @@ public class CalificationCreator extends Thread {
 
     @Override
     synchronized public void run() {
-        int counter = getStartingIndex();
+        int counter = 0;
         for (int i = getStartingIndex(); i < getMaxCreateNum(); i++) {
             int randomCalification = (int) (Math.random() * 10);
             CalificationHandler.addCalification(randomCalification);
