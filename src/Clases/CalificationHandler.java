@@ -13,12 +13,11 @@ public class CalificationHandler extends Thread{
 
     public double calculateArithmeticAverage() {
         int total = 0;
-        for (int i = 0; i < totalCalifications.size(); i++) {
-            total = total + totalCalifications.get(i);
+        for (Integer totalCalification : totalCalifications) {
+            total = total + totalCalification;
         }
-        System.out.println(total);
-        double result = (double) total / totalCalifications.size();
-        return result;
+  
+        return (double) total / totalCalifications.size();
     }
 
 }
